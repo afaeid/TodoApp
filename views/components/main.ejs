@@ -1,0 +1,27 @@
+<main>
+<div class="todo-cover">
+ <div class="todo-header">
+   <form action="/" method="post">
+    <input type="text" class="todoName" placeholder="Add todo..." name="todoName" required>
+    <button type="submit">Add</button>
+   </form>
+ </div>
+ <div class="todo-body">
+  <% if(todos.length === 0){ %>
+    <p>No todo is available </p>
+  <% }else{ %>
+    <ul class="todos">
+      <% todos.forEach((item, index)=>{ %>
+        <li>
+         <span class="todoName"><%= item.todoValue %>
+         </span>
+         <i data-todoId="<%=item.todoId%>" class="fa-solid fa-ellipsis-vertical"></i>
+         <!---->
+        </li>
+      <% }) %>
+    </ul>
+  <% } %>
+ 
+ </div>
+</div>
+</main>

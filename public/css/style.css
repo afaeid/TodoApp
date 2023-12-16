@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ outline: none;
+ border: none;
+ font-family: 'Poppins', sans-serif;
+}
+
+body {
+ background: #FCFCFF;
+}
+
+button {
+ cursor: pointer;
+}
+
+header {
+ width: 100%;
+ min-height: 80px;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ padding: 0 10px;
+ box-shadow: 0px 1px 2px 0.5px #E9EAFF;
+ padding: 0 20px;
+}
+
+header>i {
+ font-size: 20px;
+}
+
+header>nav>ul {
+ list-style-type: none;
+}
+
+header>nav>ul>li {
+ display: inline-block;
+}
+
+
+main>.todo-cover {
+ position: relative;
+ padding: 0 15px;
+ margin: 20px 0;
+ display: flex;
+ justify-content: space-around;
+ flex-direction: column;
+}
+
+main>.todo-cover>.todo-header>form {
+ flex-basis: 100vw;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 8px;
+}
+
+main>.todo-cover>.todo-header>form>input {
+ box-shadow: 0 0 2px 0.5px #E9EAFF;
+ padding: 20px;
+ height: 30px;
+ border-radius: 5px;
+ background: #fff;
+ font-size: 15px;
+ width: 80%;
+}
+
+main>.todo-cover>.todo-header>form>button {
+ width: 20%;
+ padding: 20px;
+ height: 30px;
+ display: grid;
+ place-content: center;
+ border-radius: 5px;
+ background: #616EFF;
+ font-size: 15px;
+ color: #fff;
+ transition-property: background outline;
+ transition: 0.4s ease;
+}
+
+main>.todo-cover>.todo-header>form>button:active {
+ background: #fff;
+ color: #000;
+ outline: 2px solid #616EFF;
+ transform: scale(0.9)
+}
+
+main>.todo-cover>.todo-header>form>input:focus {
+ /* border: 1px solid transparent; */
+ outline: 2px solid #616EFF;
+
+
+}
+
+main>.todo-cover>.todo-body {
+ margin: 20px 10px;
+ position: relative;
+}
+
+main>.todo-cover>.todo-body>ul {}
+
+main>.todo-cover>.todo-body>ul>li {
+ padding: 10px;
+ margin: 15px 5px;
+ background: #fff;
+ border-radius: 5px;
+ box-shadow: 0px 0px 2px 0.5px #E9EAFF;
+ list-style-type: none;
+ font-size: 18px;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ transition: background .4s linear;
+}
+
+main>.todo-cover>.todo-body>ul>li:hover {
+ background: #E9EBFF;
+}
+
+main>.todo-cover>.todo-body>ul>li>span {
+ font-size: 15px;
+
+}
+
+
+main>.todo-cover>.todo-body>ul>li>i {
+ width: 44px;
+ height: 44px;
+ /* padding: 10px; */
+ /* background: #FD3636; */
+ color: #000;
+ border-radius: 50%;
+ transition: background .4s linear;
+ cursor: pointer;
+ display: grid;
+ place-content: center;
+}
+
+main>.todo-cover>.todo-body>ul>li>i:hover {
+ background: #FCFCFF;
+ color: #000;
+}
+
+.todo-toolBox {
+ position: absolute;
+ top: 0;
+ left: 0;
+ min-width: 80px;
+ min-height: 30px;
+ /* padding: 8px 0; */
+ background: #fff;
+ box-shadow: 0px 0px 2px 0.5px #E9EAFF;
+ border-radius: 5px;
+ z-index: 5;
+}
+
+.todo-toolBox>ul {
+ list-style: none
+}
+
+.todo-toolBox>ul>li {
+ margin: 8px 0;
+ padding: 5px 16px;
+ font-size: 14px;
+}
+
+.todo-toolBox>ul>li:hover {
+ background: #616EFF;
+ color: #fff;
+}
+
+.blank-screen {
+ width: 100vw;
+ height: 100vh;
+ opacity: 0.9;
+ position: fixed;
+ top: 0;
+ left: 0;
+ z-index: 2;
+ display: none;
+ /* background: rgba(255, 255, 255, 0.2); */
+ /* backdrop-filter: blur(10px); */
+}
+
+.todo-updateing-component {
+ width: calc(100vw - 20px);
+ min-height: 100px;
+ /* background: rgba(255, 255, 255, 0.2); */
+ /* backdrop-filter: blur(10px); */
+ padding: 20px;
+ box-shadow: 0px 0px 2px 0.5px #E9EAFF;
+ background: #fff;
+ position: fixed;
+ top: 0;
+ left: 0;
+ z-index: 6
+}
+
+
+/* .viewMessage{
+ width: 100vw;
+ height: 100vh;
+ overflow-y: scroll;
+ background: wheat;
+ color: #000;
+ position: absolute;
+ padding: 20px;
+ top: 0;
+ left: 0;
+ display: none;
+} */
