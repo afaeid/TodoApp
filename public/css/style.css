@@ -84,16 +84,11 @@ main>.todo-cover>.todo-header>form>button {
 }
 
 main>.todo-cover>.todo-header>form>button:active {
-/* background: #fff;
- color: #000;
- outline: 2px solid #616EFF;*/
  transform: scale(0.9)
 }
 
 main>.todo-cover>.todo-header>form>input:focus {
- /* border: 1px solid transparent; */
  outline: 2px solid #616EFF;
-
 }
 
 main>.todo-cover>.todo-body {
@@ -130,8 +125,6 @@ main>.todo-cover>.todo-body>ul>li>span {
 main>.todo-cover>.todo-body>ul>li>i {
  width: 44px;
  height: 44px;
- /* padding: 10px; */
- /* background: #FD3636; */
  color: #000;
  border-radius: 50%;
  transition: background .4s linear;
@@ -151,7 +144,6 @@ main>.todo-cover>.todo-body>ul>li>i:hover {
  left: 0;
  min-width: 80px;
  min-height: 30px;
- /* padding: 8px 0; */
  background: #fff;
  box-shadow: 0px 0px 2px 0.5px #E9EAFF;
  border-radius: 5px;
@@ -182,8 +174,6 @@ main>.todo-cover>.todo-body>ul>li>i:hover {
  left: 0;
  z-index: 2;
  display: none;
- /* background: rgba(255, 255, 255, 0.2); */
- /* backdrop-filter: blur(10px); */
 }
 
 .todo-updateing-component {
@@ -251,8 +241,6 @@ main>.todo-cover>.todo-body>ul>li>i:hover {
  place-content: center;
  border-radius: 5px;
  font-size: 15px;
- /* transition-property: background outline; */
- /* transition: 0.4s ease; */
 }
 
 .todo-updateing-component>.component-footer>button.update-btn {
