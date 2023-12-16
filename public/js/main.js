@@ -43,7 +43,7 @@ const openUpdatingTodoComponent = (todoId, todoValue) => {
   <input type="text" placeholder="Add todo" value="${todoValue}">
  </div>
  <div class="component-footer">
-  <button class="cnacle-btn">Cancle</button>
+  <button class="cnacle-btn">Cancel</button>
   <button class="update-btn">Update</button>
  </div>`
  component.classList.add("todo-updateing-component");
