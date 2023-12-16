@@ -8,7 +8,8 @@ const viewMessage = (msg) => {
 }
 
 const openScreen = (options = {
- screenBg: "normal"
+ screenBg: "normal",
+ layoutValue: "1"
 }) => {
  if (options.screenBg === "normal") {
   blankScreen.style.background = "transparent";
@@ -21,35 +22,38 @@ const openScreen = (options = {
   blankScreen.style.backdropFilter = "blur(0px)"
  }
  blankScreen.style.display = "block";
+ blankScreen.style.zIndex = options.layoutValue;
 }
 
 const closeScreen = () => {
  blankScreen.style.display = "none";
  closeToolBox();
+ closeUpdatingTodoComponent()
 }
 
-
+const closeUpdatingTodoComponent = () => {
+ todoCover.removeChild(todoCover.querySelector(".todo-updateing-component"));
+}
 
 const openUpdatingTodoComponent = (todoId, todoValue) => {
 
- alert(todoId);
- alert(todoValue)
  var component = document.createElement("div");
  component.innerHTML = `
  <div class="component-header">
-  Todo ID: ${todoId}
+ <p class="title">Update Todo</p>
+ <p class="info">Todo ID: ${todoId}</p>
  </div>
  <div class="component-body">
-  <input type="text" placeholder="Add todo" value="${todoValue}">
+  <input type="text" placeholder="Update Todo" value="${todoValue}">
  </div>
  <div class="component-footer">
-  <button class="cnacle-btn">Cancel</button>
-  <button class="update-btn">Update</button>
+  <button class="cancel-btn">Cancel</button>
+  <button class="update-btn" >Update</button>
  </div>`
  component.classList.add("todo-updateing-component");
-
  todoCover.insertBefore(component, todoCover.querySelector(".todo-toolBox"));
- openScreen({ screenBg: "neumorphism" });
+ openScreen({ screenBg: "neumorphism", layoutValue: "6" });
+
 }
 
 
@@ -65,7 +69,7 @@ const openToolBox = (xPos, yPos, todoId, todoValue) => {
   todoCover.insertBefore(todoToolBox, todoCover.querySelector("ul"))
   todoToolBox.style.top = yPos + "px";
   todoToolBox.style.left = (xPos - todoToolBox.clientWidth) + "px";
-  openScreen()
+  openScreen({ layoutValue: "5" })
  } catch (e) {
   alert(e.stack)
  }

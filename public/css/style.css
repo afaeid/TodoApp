@@ -15,6 +15,7 @@ body {
 
 button {
  cursor: pointer;
+ user-select: none
 }
 
 header {
@@ -92,7 +93,6 @@ main>.todo-cover>.todo-header>form>button:active {
 main>.todo-cover>.todo-header>form>input:focus {
  /* border: 1px solid transparent; */
  outline: 2px solid #616EFF;
-
 
 }
 
@@ -187,19 +187,99 @@ main>.todo-cover>.todo-body>ul>li>i:hover {
 }
 
 .todo-updateing-component {
- width: calc(100vw - 20px);
+ width: calc(100vw - 50px);
  min-height: 100px;
- /* background: rgba(255, 255, 255, 0.2); */
- /* backdrop-filter: blur(10px); */
  padding: 20px;
  box-shadow: 0px 0px 2px 0.5px #E9EAFF;
  background: #fff;
  position: fixed;
- top: 0;
- left: 0;
- z-index: 6
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ z-index: 6;
+ border-radius: 5px
 }
 
+
+.todo-updateing-component>.component-header>.title {
+ text-align: center;
+ font-size: 20px;
+ font-weight: 500;
+}
+
+.todo-updateing-component>.component-header>.info {
+ text-align: center;
+ font-size: 10px;
+ font-weight: 400;
+ color: #B7B7B7;
+}
+
+.todo-updateing-component>.component-body {
+ margin: 10px 0;
+}
+
+.todo-updateing-component>.component-body>input {
+ width: 100%;
+ box-shadow: 0 0 2px 0.5px #E9EAFF;
+ padding: 20px;
+ height: 30px;
+ border-radius: 5px;
+ background: #fff;
+ font-size: 15px;
+}
+
+.todo-updateing-component>.component-body>input:focus {
+ outline: 2px solid #616EFF;
+}
+
+
+.todo-updateing-component>.component-footer {
+ width: 100%;
+ display: flex;
+ align-items: center;
+ justify-content: space-around;
+ align-items: center;
+ gap: 15px;
+}
+
+
+.todo-updateing-component>.component-footer>button {
+ padding: 20px;
+ height: 30px;
+ width: 48%;
+ display: grid;
+ place-content: center;
+ border-radius: 5px;
+ font-size: 15px;
+ transition-property: background outline;
+ transition: 0.4s ease;
+}
+
+.todo-updateing-component>.component-footer>button.update-btn {
+ background: #616EFF;
+ color: #fff;
+}
+
+.todo-updateing-component>.component-footer>button.cancel-btn {
+ background: #FCFCFF;
+ color: #000;
+ box-shadow: 0 0 2px 0.5px #E9EAFF;
+
+}
+
+.todo-updateing-component>.component-footer>button:active {
+ transform: scale(0.9)
+}
+
+.todo-updateing-component>.component-footer>button.update-btn:active {
+ background: #fff;
+ color: #000;
+ outline: 2px solid #616EFF;
+}
+
+/* .todo-updateing-component>.component-footer>button.cancel-btn:active {
+ 
+} */
 
 /* .viewMessage{
  width: 100vw;
