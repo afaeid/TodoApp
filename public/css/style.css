@@ -84,9 +84,9 @@ main>.todo-cover>.todo-header>form>button {
 }
 
 main>.todo-cover>.todo-header>form>button:active {
- background: #fff;
+/* background: #fff;
  color: #000;
- outline: 2px solid #616EFF;
+ outline: 2px solid #616EFF;*/
  transform: scale(0.9)
 }
 
@@ -251,8 +251,8 @@ main>.todo-cover>.todo-body>ul>li>i:hover {
  place-content: center;
  border-radius: 5px;
  font-size: 15px;
- transition-property: background outline;
- transition: 0.4s ease;
+ /* transition-property: background outline; */
+ /* transition: 0.4s ease; */
 }
 
 .todo-updateing-component>.component-footer>button.update-btn {
@@ -267,29 +267,10 @@ main>.todo-cover>.todo-body>ul>li>i:hover {
 
 }
 
-.todo-updateing-component>.component-footer>button:active {
+.todo-updateing-component>.component-footer>button:active:not(.todo-updateing-component>.component-footer>button.update-btn[disabled]) {
  transform: scale(0.9)
 }
 
-.todo-updateing-component>.component-footer>button.update-btn:active {
- background: #fff;
- color: #000;
- outline: 2px solid #616EFF;
+.todo-updateing-component>.component-footer>button.update-btn[disabled]{
+ opacity: .7;
 }
-
-/* .todo-updateing-component>.component-footer>button.cancel-btn:active {
- 
-} */
-
-/* .viewMessage{
- width: 100vw;
- height: 100vh;
- overflow-y: scroll;
- background: wheat;
- color: #000;
- position: absolute;
- padding: 20px;
- top: 0;
- left: 0;
- display: none;
-} */

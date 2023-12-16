@@ -44,16 +44,27 @@ const openUpdatingTodoComponent = (todoId, todoValue) => {
  <p class="info">Todo ID: ${todoId}</p>
  </div>
  <div class="component-body">
-  <input type="text" placeholder="Update Todo" value="${todoValue}">
+  <input type="text" placeholder="Update Todo" data-previousvalue="${todoValue}" value="${todoValue}" onkeyup="checkUpdatedTodo(this)">
  </div>
  <div class="component-footer">
-  <button class="cancel-btn">Cancel</button>
-  <button class="update-btn" >Update</button>
+  <button class="cancel-btn" onclick="closeScreen()">Cancel</button>
+  <button class="update-btn" disabled>Update</button>
  </div>`
  component.classList.add("todo-updateing-component");
  todoCover.insertBefore(component, todoCover.querySelector(".todo-toolBox"));
  openScreen({ screenBg: "neumorphism", layoutValue: "6" });
+}
 
+
+
+const checkUpdatedTodo = (elm)=>{
+ if(elm.dataset.previousvalue != elm.value){
+  console.log("todo has been changed");
+  elm.parentElement.parentElement.querySelector(".component-footer>button.update-btn").disabled = false;
+ }else{
+  console.log("todo has not been changed");
+  elm.parentElement.parentElement.querySelector(".component-footer>button.update-btn").disabled = true;
+ }
 }
 
 
@@ -70,6 +81,8 @@ const openToolBox = (xPos, yPos, todoId, todoValue) => {
   todoToolBox.style.top = yPos + "px";
   todoToolBox.style.left = (xPos - todoToolBox.clientWidth) + "px";
   openScreen({ layoutValue: "5" })
+  
+  
  } catch (e) {
   alert(e.stack)
  }
