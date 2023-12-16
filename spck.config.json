@@ -1,8 +1,0 @@
-{
-  "run": {
-    "type": "url",
-    "file": "views/index.html",
-    "ignoreCurrent": true,
-    "url": "http://localhost:6700/"
-  }
-}
