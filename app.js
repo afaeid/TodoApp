@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
 
 app.post("/", (req, res) => {
 
- var todoValue = req.body.todoName;
+ var todoValue = req.body.todoName.trim();
  var todoId = Date.now();
  var newTodo = { todoValue, todoId }
  if (todoValue !== '') {
@@ -33,16 +33,18 @@ app.post("/", (req, res) => {
 })
 
 app.put("/", (req, res) => {
- var todoValue = req.body.todoName;
+ var todoValue = req.body.todoName.trim();
  var todoId = req.body.todoId;
  let foundTodo = todos.find(todo => todo.todoId == todoId);
 
  if (foundTodo) {
-  Object.assign(foundTodo, { todoValue });
+  if(foundTodo.todoValue != todoValue && todoValue != ""){
+   Object.assign(foundTodo, { todoValue });
   res.status(200).send({message: "Todo has been successfully updated"})
-  console.log(todos);
+  }else{
+   res.status(304).send({message: "Nothing to update in todo"})
+  }
  } else {
-  console.log("Object not found");
   res.status(404).send({message: "No todo found to update"})
  }
 })
