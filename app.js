@@ -30,9 +30,11 @@ app.post("/", (req, res) => {
   res.status(404);
   res.send({ message: "No todo has been given to creat new" })
  }
+ 
 })
 
 app.put("/", (req, res) => {
+ 
  var todoValue = req.body.todoName.trim();
  var todoId = req.body.todoId;
  let foundTodo = todos.find(todo => todo.todoId == todoId);
@@ -47,6 +49,7 @@ app.put("/", (req, res) => {
  } else {
   res.status(404).send({message: "No todo found to update"})
  }
+ 
 })
 
 
