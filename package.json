@@ -1,13 +1,13 @@
 {
  "name": "todo-app-with-ejs",
  "version": "1.0.0",
- "description": "",
- "main": "main.js",
+ "description": "This is a testing todo app",
+ "main": "index.js",
  "scripts": {
-  "start": "nodemon main.js"
+  "start": "nodemon index.js"
  },
  "keywords": [],
- "author": "",
+ "author": "afaeid",
  "license": "ISC",
  "dependencies": {
   "cors": "^2.8.5",
