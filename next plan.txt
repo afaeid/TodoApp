@@ -1,0 +1,38 @@
+1. Making new todo eligible for new todos
+2. showing toast message 
+3. Error handling for todos
+4. making interface for no todos (first and last)
+
+
+
+<i class="fa-regular fa-circle-check"></i>
+<i class="fa-regular fa-comment"></i>
+<i class="fa-regular fa-circle-xmark"></i>
+
+
+
+<i class="bi bi-check-circle"></i>
+<i class="bi bi-info-circle"></i>
+<i class="bi bi-x-circle"></i> // not useable 
+<i class="bi bi-exclamation-triangle"></i>
+
+
+
+
+
+
+ <div class="toast-box alert">
+  <div class="alligned-line"></div>
+  <div class="toast-icon-container">
+   <i class="bi bi-exclamation-triangle"></i>
+  </div>
+  <div class="toast-message-container">
+   <p class="toast-message-title">Info message</p>
+   <p class="toast-message-description">
+    There are five options to you for designing.
+   </p>
+  </div>
+  <div class="toast-closing-icon-container">
+   <i class="fa-solid fa-xmark"></i>
+  </div>
+ </div>

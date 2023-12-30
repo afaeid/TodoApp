@@ -13,13 +13,15 @@
 </head>
 <body>
  <div class="blank-screen"></div>
+ 
  <%- include("./components/header") %>
  <%- include("./components/main") %>
- <script src="/js/main.js"></script>
-  
-  <script>
+
+<script src="/js/http.request.handler.js"></script>
+<script src="/js/main.js"></script>
+ <script>
   (function () { var script = document.createElement('script'); script.src="//cdn.jsdelivr.net/npm/eruda"; document.body.appendChild(script); script.onload = function () { eruda.init() } })();
  </script>
- 
+
 </body>
 </html>

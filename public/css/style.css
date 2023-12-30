@@ -18,6 +18,144 @@ button {
  user-select: none
 }
 
+.toast-box {
+ width: 330px;
+ min-height: 30px;
+ padding: 10px 5px 10px 22px;
+ position: fixed;
+ bottom: 40px;
+ left: 50%;
+ transform: translateX(-50%);
+ background: #fff;
+ display: grid;
+ grid-template-areas:
+  'tstIcon tstIcon tstMsg tstMsg tstMsg tstMsg tstMsg tstClsIcon';
+ grid-column-gap: 20px;
+ align-items: center;
+ box-shadow: 0px 0px 2px 0.5px #E9EAFF;
+ border-radius: 5px;
+ z-index: 6;
+ user-select: none;
+}
+
+.toast-box>.alligned-line {
+ /* position: absolute; */
+ width: 4px;
+ position: absolute;
+ height: calc(100% - 3.5px);
+ left: 2px;
+ border-radius: 8px;
+}
+
+.toast-box.info>.alligned-line {
+ background: #616EFF;
+}
+
+.toast-box.success>.alligned-line {
+ background: #46874F;
+}
+.toast-box.error>.alligned-line {
+ background: #FF4F4F;
+}
+.toast-box.warning>.alligned-line {
+ background: #F57F1D;
+}
+
+.toast-box>.toast-icon-container {
+ grid-area: tstIcon;
+ text-align: center;
+ padding: 15px;
+ border-radius: 50%;
+ width: 48px;
+ height: 48px;
+ display: grid;
+ place-content: center;
+}
+
+.toast-box.info>.toast-icon-container {
+ background: #E9EBFF;
+ color: #616EFF;
+} 
+
+.toast-box.success>.toast-icon-container {
+ background: #EBFFD4;
+ color: #46874F;
+}
+
+.toast-box.error>.toast-icon-container {
+ background: #FBE9E7;
+ color: #FF4F4F;
+}
+
+.toast-box.warning>.toast-icon-container {
+ background: #FFF3E0;
+ color: #F57F1D;
+}
+
+.toast-box>.toast-icon-container {
+ font-size: 18px;
+}
+
+.toast-box>.toast-message-container {
+ grid-area: tstMsg
+}
+
+.toast-box>.toast-message-container>.toast-message-title {
+ font-weight: 600;
+}
+
+.toast-box.info>.toast-message-container>.toast-message-title {
+ color: #616EFF;
+}
+
+.toast-box.success>.toast-message-container>.toast-message-title {
+ color: #46874F;
+}
+
+.toast-box.error>.toast-message-container>.toast-message-title {
+ color: #FF4F4F;
+}
+
+.toast-box.warning>.toast-message-container>.toast-message-title {
+ color: #F57F1D;
+}
+
+.toast-box>.toast-message-container>.toast-message-description {
+ font-size: 12px;
+ color: #7F7F7F;
+ /* color: #000; */
+}
+
+.toast-box>.toast-closing-icon-container {
+ grid-area: tstClsIcon;
+ display: grid;
+ place-content: center;
+ padding: 10px;
+ height: 32px;
+ width: 32px;
+ border-radius: 50%;
+}
+
+.toast-box>.toast-closing-icon-container:active {
+ background: #E9EBFF;
+}
+
+/* .toast-box > .toast-closing-icon-container>i{
+ transition: transform 0.4s;
+} */
+
+/* .toast-box > .toast-closing-icon-container>i:hover{
+ transform: scale(.8)
+} */
+
+.request-sender-btn>.process-icon {
+ display: none;
+}
+
+.request-sender-btn.in-process>.process-icon {
+ display: none;
+}
+
 header {
  width: 100%;
  min-height: 80px;
@@ -99,7 +237,8 @@ main>.todo-cover>.todo-body {
 main>.todo-cover>.todo-body>ul {}
 
 main>.todo-cover>.todo-body>ul>li {
- padding: 10px;
+ padding: 8px 10px;
+ padding-right: 5px;
  margin: 15px 5px;
  background: #fff;
  border-radius: 5px;
@@ -118,7 +257,7 @@ main>.todo-cover>.todo-body>ul>li:hover {
 
 main>.todo-cover>.todo-body>ul>li>span {
  font-size: 15px;
-
+ width: calc(100% - 48px);
 }
 
 
@@ -212,6 +351,7 @@ main>.todo-cover>.todo-body>ul>li>i:hover {
  width: 100%;
  box-shadow: 0 0 2px 0.5px #E9EAFF;
  padding: 20px;
+ margin: 5px 0;
  height: 30px;
  border-radius: 5px;
  background: #fff;
@@ -259,6 +399,6 @@ main>.todo-cover>.todo-body>ul>li>i:hover {
  transform: scale(0.9)
 }
 
-.todo-updateing-component>.component-footer>button.update-btn[disabled]{
+.todo-updateing-component>.component-footer>button.update-btn[disabled] {
  opacity: .7;
 }

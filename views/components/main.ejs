@@ -1,9 +1,10 @@
 <main>
 <div class="todo-cover">
  <div class="todo-header">
-   <form action="/" method="post">
-    <input type="text" class="todoName" placeholder="Add todo..." name="todoName" required>
-    <button type="submit">Add</button>
+   <form class="todo-post-form">
+    <input type="text" class="todoValue" placeholder="Add todo..." name="todoValue" required>
+    <button type="submit" class="todo-post-btn">Add
+    </button>
    </form>
  </div>
  <div class="todo-body">
@@ -12,10 +13,11 @@
   <% }else{ %>
     <ul class="todos">
       <% todos.forEach((item, index)=>{ %>
-        <li>
-         <span class="todoName"><%= item.todoValue %>
+        <li id="<%=item.todoId%>">
+         <span class="todoName">
+          <%= item.todoValue %>
          </span>
-         <i data-todoId="<%=item.todoId%>" class="fa-solid fa-ellipsis-vertical"></i>
+         <i data-todoid="<%=item.todoId%>" class="fa-solid fa-ellipsis-vertical"></i>
         </li>
       <% }) %>
     </ul>
@@ -23,4 +25,4 @@
  
  </div>
 </div>
-</main>
+</main
